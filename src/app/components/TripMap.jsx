@@ -35,16 +35,30 @@ const TripMap = () => {
     const [sortDirection, setSortDirection] = useState('asc');
 
     useEffect(() => {
-            const initialMap = L.map(mapRef.current).setView([-6.2729, 106.7893], 14);
-            L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-                attribution: '&copy; Google Maps',
-            }).addTo(initialMap);
-            setMap(initialMap);
-            return () => {
-                initialMap.remove();
-            };
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                
+                // Initialize the map with the user's location
+                const initialMap = L.map(mapRef.current).setView([latitude, longitude], 14);
+                L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+                    attribution: '&copy; Google Maps',
+                }).addTo(initialMap);
+                setMap(initialMap);
+            },
+            (error) => {
+                console.error("Error retrieving location: ", error);
+            }
+        );
+    
+        // Cleanup function to remove the map instance
+        return () => {
+            if (initialMap) initialMap.remove();
+        };
     }, []);
+    
+    
 
     const handleMapClick = (event) => {
         const { lat, lng } = event.latlng;

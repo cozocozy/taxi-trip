@@ -40,7 +40,7 @@ const TripList = ({
   };
   return (
     <div className="p-4 bg-gradient-to-br from-indigo-500 from-10% via-sky-500 via-30% to-purple-900 to-80% text-white overflow-y-auto mx-auto shadow-xl shadow-indigo-900/50">
-      <h1 className="text-[16x] lg:text-xl font-semibold text-center mb-3 p-2 border-b">SKY TAXI TRIP</h1>
+      <h1 className="text-[16x] lg:text-xl font-bold text-center mb-3 p-2 border-b tracking-widest">SKY TAXI TRIP</h1>
       <h2 className="text-sm text-center lg:text-lg font-semibold mb-4 drop-shadow-md">
         Sort By:
       </h2>
