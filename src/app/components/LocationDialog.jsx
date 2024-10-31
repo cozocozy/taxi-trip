@@ -22,11 +22,11 @@ const LocationDialog = ({ open, onClose }) => {
             </DialogContent>
             <DialogActions>
                 {isPickup ? (
-                    <button onClick={handlePickupClick}  className="bg-emerald-500 px-4 py-2 rounded-md text-white shadow-md text-sm">
+                    <button onClick={handlePickupClick}  className="bg-indigo-500 px-4 py-2 rounded-md text-white shadow-md text-sm">
                         Pick Up
                     </button>
                 ) : (
-                    <button onClick={handleDropoffClick} className="bg-emerald-500 px-4 py-2 rounded-md text-white shadow-md text-sm" >
+                    <button onClick={handleDropoffClick} className="bg-indigo-500 px-4 py-2 rounded-md text-white shadow-md text-sm" >
                         Drop Off
                     </button>
                 )}

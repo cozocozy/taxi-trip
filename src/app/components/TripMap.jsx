@@ -149,7 +149,7 @@ const TripMap = () => {
 
         <div className="flex h-screen">
             <div className="relative w-screen" ref={mapRef}></div>
-            <button className={`p-2 mix-blend-screen bg-indigo-600 text-white border-r shadow-xl shadow-white/50 border-white font-bold`} onClick={() => setIsOpen(!isOpen)}>
+            <button className={`p-2 mix-blend-screen bg-indigo-500 text-white border-r shadow-xl shadow-white/50 border-white font-bold`} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? '>>' : '<<'}
             </button>
             {isOpen && (
